@@ -58,6 +58,7 @@ Details of the GPLv3 license can be found at: https://www.gnu.org/licenses/gpl-3
 
 #include "genlib.h"
 #include "genlib_exportfunctions.h"
+#include "genlib_ops.h"
 #include <stdlib.h> // not cstdlib (causes problems with ARM embedded compiler)
 #include <cstdio>
 #include <cstring>

@@ -184,7 +184,7 @@ inline t_sample safepow(t_sample base, t_sample exponent) {
 
 inline t_sample absdiff(t_sample a, t_sample b) { return fabs(a-b); }
 
-#ifndef WIN32
+#if !defined(WIN32) && __cplusplus < 201103L
 inline t_sample exp2(t_sample v) { return pow(2., v); }
 
 inline t_sample trunc(t_sample v) {
@@ -193,7 +193,7 @@ inline t_sample trunc(t_sample v) {
 	long val = v + epsilon;
 	return val;
 }
-#endif // WIN32
+#endif // !WIN32 && pre-C++11
 
 inline t_sample sign(t_sample v) {
 	return v > t_sample(0) ? t_sample(1) : v < t_sample(0) ? t_sample(-1) : t_sample(0);
